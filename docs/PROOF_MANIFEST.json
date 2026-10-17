@@ -1,0 +1,14 @@
+{
+  "project": "SchemaSentinel",
+  "category": "Intelligent Contracts",
+  "status": "PENDING_GITHUB_CI_AND_LIVE_STUDIONET",
+  "contract": "contracts/schema_sentinel.py",
+  "ci_run": null,
+  "ci_status": "NOT_VERIFIED",
+  "direct_mode_tests": null,
+  "genvm_lint": null,
+  "studionet_run": null,
+  "studionet_address": null,
+  "studionet_tx_hashes": [],
+  "notes": "This placeholder does not certify live GenLayer deployment or consensus. Update only after observing source-pinned evidence."
+}
