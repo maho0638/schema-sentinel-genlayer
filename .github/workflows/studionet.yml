@@ -1,5 +1,8 @@
 name: SchemaSentinel Studionet Proof (manual)
 on:
+  push:
+    paths:
+      - '.github/workflows/studionet.yml'
   workflow_dispatch:
 jobs:
   live-proof:
