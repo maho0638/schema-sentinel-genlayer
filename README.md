@@ -2,7 +2,7 @@
 
 **A standalone, reusable GenLayer Intelligent Contract:** freeze a bounded API field manifest, compare future versions deterministically, and let independent GenLayer validators examine only the hard-to-automate *semantic drift* of existing field descriptions. It produces immutable, hash-bound compatibility receipts.
 
-No token escrow, frontend, external URL fetch, privileged admin, or private key is needed to use the primitive.
+The contract has no token escrow, embedded private keys, key custody, frontend or external URL fetch. Normal signed transactions still require a GenLayer account.
 
 ## Problem
 
