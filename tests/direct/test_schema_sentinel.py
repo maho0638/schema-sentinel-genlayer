@@ -128,7 +128,7 @@ def test_validator_accepts_non_decisive_confidence_drift(direct_vm, direct_deplo
 @pytest.mark.parametrize("bad", [
     "", "IN|x|string|1|", "IN|x|string|2|note", "SIDE|x|string|1|note",
     "IN|x|float|1|note", "IN|X|string|1|note", "IN|x|string|1|note|extra",
-    "IN|x|string|1|note\nIN|x|string|0|different", "IN|x|string|1|note\n",
+    "IN|x|string|1|note\nIN|x|string|0|different",
     "IN|x|string|1|note\n\nOUT|y|string|0|result",
     "IN|x|string|1|note\nOUT|y|string|0|", "IN|x|string|1|note\n\t",
     "IN|x|string|1|" + "a" * 161,
@@ -138,6 +138,12 @@ def test_invalid_schemas_rejected(bad, direct_vm, direct_deploy, direct_alice):
     c = deployed(direct_deploy, direct_vm, direct_alice)
     with direct_vm.expect_revert():
         c.assess("bad", "users-v1", bad)
+
+
+def test_trailing_newline_is_valid_and_normalized(direct_vm, direct_deploy, direct_alice):
+    c = deployed(direct_deploy, direct_vm, direct_alice)
+    c.assess("trailing", "users-v1", BASE + "\n")
+    assert c.get_receipt("trailing").candidate_hash == c.get_baseline("users-v1").schema_hash
 
 
 def test_duplicate_ids_immutable(direct_vm, direct_deploy, direct_alice):
