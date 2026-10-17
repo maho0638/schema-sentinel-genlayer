@@ -1,14 +1,27 @@
 {
   "project": "SchemaSentinel",
   "category": "Intelligent Contracts",
-  "status": "PENDING_GITHUB_CI_AND_LIVE_STUDIONET",
-  "contract": "contracts/schema_sentinel.py",
-  "ci_run": null,
-  "ci_status": "NOT_VERIFIED",
-  "direct_mode_tests": null,
-  "genvm_lint": null,
-  "studionet_run": null,
-  "studionet_address": null,
-  "studionet_tx_hashes": [],
-  "notes": "This placeholder does not certify live GenLayer deployment or consensus. Update only after observing source-pinned evidence."
+  "status": "DIRECT_CI_AND_STUDIONET_LIVE_VERIFIED",
+  "source_path": "contracts/schema_sentinel.py",
+  "source_sha256": "ee64774f75eceff8f1e702a4b19d9acb494a4de5f1a92f863eeeb0ad513e91ce",
+  "source_commit": "3c8bb02032402f8bbf497af1c8b28efbb1b8a2ea",
+  "direct_test_run": "https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018311313",
+  "direct_test_results": "40 passed",
+  "genvm_lint": "3 checks passed; 5 public methods",
+  "offline_stub_results": "19 passed (SDK stub only, not GenVM)",
+  "studionet_run": "https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018478065",
+  "studionet_results": "1 passed in 43.14s",
+  "studionet_contract": "0x5572D22D44F3a296d295bCa78B94e178bA996af9",
+  "studionet_transactions": {
+    "register_baseline": "0x9ff50055c296ca8031c69066815b39d88fac5b7ac17b4407224dd4aa060cc27b",
+    "breaking_assessment": "0x3472f841022459ad559c5b57cfd0dd4fe25ab3deb55cd09df5c73cd87c0f7ee6",
+    "semantic_assessment": "0xdd3b5adcb0d6370ce86cdfa042834860eda3e01eec6580c5b2b212de1892b147"
+  },
+  "observed_outcomes": {
+    "breaking_verdict": "BREAKING",
+    "breaking_count": 1,
+    "semantic_verdict": "COMPATIBLE",
+    "baseline_hash_integrity": true
+  },
+  "limitations": "Studionet live test proves one observed lifecycle; it does not prove production/mainnet behavior, five agreeing validators, API vendor identity, or every OpenAPI change type."
 }

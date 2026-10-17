@@ -1,4 +1,4 @@
-# GenLayer Portal — Intelligent Contracts draft (do not submit before verifying CI)
+# GenLayer Portal — Intelligent Contracts draft (CI and Studionet verified; submit only with user approval)
 
 **Title:** SchemaSentinel — Consensus-Verified API Compatibility Receipts
 
@@ -13,3 +13,10 @@
 **Evidence:** Source, Direct Mode tests, GenVM lint results, manual Studionet integration test and threat model in the repository. Publish CI/live URLs **only when actually successful**. Source hash and transaction addresses must come from observed runs.
 
 **Known boundaries:** Not an OpenAPI parser, vendor identity attestor or live API monitor. No tokens/gas wallet management by the contract, no external website fetch, no source-authenticity guarantee. Caller must trust the baseline they select.
+
+## Verified reviewer links
+
+- Code: https://github.com/maho0638/schema-sentinel-genlayer/blob/main/contracts/schema_sentinel.py
+- 40/40 Direct tests + lint 3/3: https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018311313
+- Real Studionet lifecycle 1/1: https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018478065
+- Hash, contract, transactions, outcomes: https://github.com/maho0638/schema-sentinel-genlayer/blob/main/docs/PROOF_MANIFEST.json

@@ -47,9 +47,17 @@ The hard part is semantic equivalence. A leader can understand two natural-langu
 
 See [architecture](docs/ARCHITECTURE.md), [security limitations](docs/THREAT_MODEL.md), [reviewer reproduction](docs/REVIEWER_GUIDE.md), and [Portal draft](SUBMISSION_DRAFT.md).
 
-## Verification status
+## Verification status (17 October 2026)
 
-The offline stub checks are **logic-only**, not consensus or live network proof. `tests/direct/` uses the actual GenLayer testing-suite Direct Mode and independently invokes validator checks. The manually triggered Studio workflow attempts real Studionet deployment and semantic-consensus transactions; its results are not assumed successful until verified in GitHub Actions.
+**Verified:** 40/40 genuine GenLayer Direct Mode tests, GenVM lint 3/3, and 1/1 live Studionet integration lifecycle. The live test deployed SchemaSentinel, registered a baseline, recorded a deterministic `BREAKING` receipt, ran the semantic consensus assessment, read a `COMPATIBLE` result and checked its immutable baseline hash.
+
+- Direct + lint: https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018311313
+- Live Studionet: https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018478065
+- Observed Studio contract: `0x5572D22D44F3a296d295bCa78B94e178bA996af9`
+- Pinned SHA-256: `ee64774f75eceff8f1e702a4b19d9acb494a4de5f1a92f863eeeb0ad513e91ce`
+- Full transaction hashes and observed outputs: [`docs/PROOF_MANIFEST.json`](docs/PROOF_MANIFEST.json).
+
+Offline stub tests are **logic-only**, not network or consensus proof. Direct Mode uses controlled LLM mocks; the Studionet test is the separate observed live proof. No Bradbury or mainnet deployment is claimed.
 
 ```bash
 python -m pip install -r requirements.txt

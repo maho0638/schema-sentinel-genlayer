@@ -6,7 +6,7 @@
 2. In `README.md` confirm the constrained manifest grammar and why deterministic and semantic checks are separate.
 3. In `tests/direct/test_schema_sentinel.py` inspect breaking changes, fail-closed ambiguity and independent validator disagreement.
 4. Check `docs/THREAT_MODEL.md` for explicit vendor-authenticity and OpenAPI scope limitations.
-5. Check `docs/PROOF_MANIFEST.json` for *verified* outcomes; missing live results must not be presented as deployment success.
+5. Check `docs/PROOF_MANIFEST.json` for verified SHA-256, contract address, live transaction hashes and observed outcomes; do not confuse this Studionet proof with mainnet deployment.
 
 ## Reproduce
 
@@ -32,3 +32,12 @@
 | Leader says `SAME`, validator `CHANGED` | Consensus disagreement | No verified compatible record |
 
 Production-readiness requires additional threat modeling and independently witnessed live validator transactions.
+
+## Confirmed proof snapshot (17 Oct 2026)
+
+- Direct Mode: [40 passing tests](https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018311313).
+- Linter: 3 checks passed on the identical pinned contract SHA-256.
+- Studionet: [one successful live lifecycle](https://github.com/maho0638/schema-sentinel-genlayer/actions/runs/39018478065), three logged transactions; `BREAKING` structural verdict and `COMPATIBLE` semantic verdict read from deployed contract.
+- Address and all tx hashes: [proof manifest](PROOF_MANIFEST.json).
+
+These are test-network observations. No score or Portal acceptance is claimed.
